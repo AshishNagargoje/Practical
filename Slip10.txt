@@ -1,0 +1,38 @@
+Q)1
+
+def reverse_integer(n):
+    # Convert the integer to a string
+    n = str(n)
+    # Reverse the string
+    n = n[::-1]
+    # Convert the reversed string back to an integer
+    n = int(n)
+    return n
+
+def main():
+    num = int(input("Enter an integer: "))
+    reversed_num = reverse_integer(num)
+    print(f"The reversed integer is: {reversed_num}")
+
+main()
+
+
+Q)2
+
+n = int(input("Enter the number of integers in the array: "))
+arr = list(map(int, input("Enter the integers separated by space: ").split()))
+
+# Create a dictionary to store the frequency of each element
+freq_count = {}
+
+# Iterate through the array and count the frequency of each element
+for num in arr:
+    if num in freq_count:
+        freq_count[num] += 1
+    else:
+        freq_count[num] = 1
+
+# Print the frequency of each element
+print("Frequency of elements in the array:")
+for num, freq in freq_count.items():
+    print(f"{num}: {freq}")

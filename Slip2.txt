@@ -1,0 +1,29 @@
+Q)1
+
+# Original tuple of string values
+tuple_of_strings = (('333', '33'), ('1234', '55'))
+
+# Convert the tuple to a list of tuples of integers
+tuple_of_integers = [(int(x), int(y)) for x, y in tuple_of_strings]
+
+# Print the tuple of integers
+print(tuple_of_integers)
+
+
+Q)2
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    
+    def area(self):
+        return self.length * self.width
+    
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+# Test the Rectangle class
+rectangle = Rectangle(4, 5)
+print(rectangle.area())  # Output: 20
+print(rectangle.perimeter())  # Output: 18

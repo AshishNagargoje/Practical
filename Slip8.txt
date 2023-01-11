@@ -1,0 +1,49 @@
+Q)1
+def is_upper_triangular(matrix):
+    for i in range(len(matrix)):
+        for j in range(i):
+            if matrix[i][j] != 0:
+                return False
+    return True
+
+matrix1 = [[1, 2, 3], [0, 5, 6], [0, 0, 9]]
+print(is_upper_triangular(matrix1))  # Output: True
+
+matrix2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(is_upper_triangular(matrix2))  # Output: False
+
+
+Q)2
+
+n1=int(input("first no"))
+n2=int(input("second no"))
+def max():
+    if(n1>n2):
+        print(n1)
+    else:
+        print(n2)
+def bet():
+    for i in range(n1,n2+1):
+        print(i)
+
+def sum():
+    print("sum = ",n1+n2)
+    print("avg = ",(n1+n2)/2)
+
+ch=0
+while(ch!=4):
+    print("1.maximum")
+    print("2.no between ",n1," and ",n2)
+    print("3.sum and average")
+    print("1.Exit")
+
+    ch=int(input("enter choice"))
+
+    if(ch==1):
+        max()
+    if(ch==2):
+        bet()
+    if(ch==3):
+        sum()
+    if(ch==4):
+        print("EXIT")

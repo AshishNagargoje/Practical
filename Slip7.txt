@@ -1,0 +1,67 @@
+Q)1
+
+def add_matrices(matrix1, matrix2):
+    # Check that the matrices have the same dimensions
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        raise ValueError("Matrices must have the same dimensions")
+    
+    # Create a new matrix to store the result
+    result = [[0 for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
+    
+    # Add the matrices element-wise
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1[0])):
+            result[i][j] = matrix1[i][j] + matrix2[i][j]
+    
+    return result
+
+# Test the add_matrices function
+matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+result = add_matrices(matrix1, matrix2)
+print(result)  # Output: [[10, 10, 10], [10, 10, 10], [10, 10, 10]]
+
+
+Q)2
+
+
+def is_even_or_odd(num):
+    if num % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+def main():
+    while True:
+        # Display the menu
+        print("1. Check if even or odd")
+        print("2. Check if prime")
+        print("3. Exit")
+        choice = int(input("Enter your choice: "))
+        
+        # Perform the chosen operation
+        if choice == 1:
+            num = int(input("Enter a number: "))
+            result = is_even_or_odd(num)
+            print(f"The number is {result}.")
+        elif choice == 2:
+            num = int(input("Enter a number: "))
+            result = is_prime(num)
+            if result:
+                print("The number is prime.")
+            else:
+                print("The number is not prime.")
+        elif choice == 3:
+            break
+        else:
+            print("Invalid choice.")
+
+main()

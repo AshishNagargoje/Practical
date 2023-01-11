@@ -1,0 +1,71 @@
+Q)1
+
+def multiply_matrices(matrix1, matrix2):
+    # Check that the matrices can be multiplied
+    if len(matrix1[0]) != len(matrix2):
+        raise ValueError("Matrices cannot be multiplied")
+    
+    # Create a new matrix to store the result
+    result = [[0 for j in range(len(matrix2[0]))] for i in range(len(matrix1))]
+    
+    # Multiply the matrices element-wise
+    for i in range(len(matrix1)):
+        for j in range(len(matrix2[0])):
+            for k in range(len(matrix2)):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+    
+    return result
+
+# Test the multiply_matrices function
+matrix1 = [[1, 2, 3], [4, 5, 6]]
+matrix2 = [[7, 8], [9, 10], [11, 12]]
+result = multiply_matrices(matrix1, matrix2)
+print(result)  # Output: [[58, 64], [139, 154]]
+
+
+def accept_matrix():
+    # Accept the dimensions of the matrix
+    rows = int(input("Enter the number of rows: "))
+    columns = int(input("Enter the number of columns: "))
+    
+    # Accept the elements of the matrix
+    matrix = [[int(input(f"Enter element ({i},{j}): ")) for j in range(columns)] for i in range(rows)]
+    
+    return matrix
+
+def display_matrix(matrix):
+    # Print each row of the matrix
+    for row in matrix:
+        print(row)
+
+def main():
+    # Accept and display the first matrix
+    matrix
+
+
+
+
+
+Q)2
+
+
+def factorial(n: int) -> int:
+    # Calculate the factorial of a number
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def series_sum(x: float, n: int) -> float:
+    # Calculate the sum of the first n terms of the series x + x/3! + x/5! + x/7! + ...
+    sum = x
+    for i in range(1, n + 1):
+        sum += x / factorial(2 * i + 1)
+    return sum
+
+# Read x and n from the user
+x = float(input("Enter x: "))
+n = int(input("Enter n: "))
+
+# Calculate and print the sum of the first n terms of the series
+print(f"Sum of first {n} terms of series: {series_sum(x, n)}")

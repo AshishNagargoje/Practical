@@ -1,0 +1,30 @@
+Q)1
+
+def is_armstrong(num):
+    # Convert the number to a string and get the number of digits
+    num_str = str(num)
+    num_digits = len(num_str)
+    
+    # Compute the sum of the digits raised to the power of the number of digits
+    sum_of_digits = sum(int(x)**num_digits for x in num_str)
+    
+    # Return True if the sum is equal to the original number, False otherwise
+    return sum_of_digits == num
+
+# Test the is_armstrong function
+print(is_armstrong(371))  # Output: True
+print(is_armstrong(123))  # Output: False
+print(is_armstrong(407))  # Output: True
+
+
+Q)2
+
+def sum_of_digits(num):
+    # Convert the number to a string and sum the digits
+    return sum(int(x) for x in str(num))
+
+
+num = int(input("Enter a number: "))
+
+print(sum_of_digits(num))
+

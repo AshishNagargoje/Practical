@@ -1,0 +1,41 @@
+Q)1
+
+def transpose_matrix(matrix):
+    # Create a new matrix to store the transpose
+    transpose = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    
+    return transpose
+
+# Test the transpose_matrix function
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+transpose = transpose_matrix(matrix)
+print(transpose)  # Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+-----------
+# Accept the dimensions of the matrix
+rows = int(input("Enter the number of rows: "))
+columns = int(input("Enter the number of columns: "))
+
+# Accept the elements of the matrix
+matrix = [[int(input(f"Enter element ({i},{j}): ")) for j in range(columns)] for i in range(rows)]
+
+# Transpose and display the matrix
+transpose = transpose_matrix(matrix)
+print("Original matrix:")
+display_matrix(matrix)
+print("Transposed matrix:")
+display_matrix(transpose)
+
+
+Q)2
+
+# Accept the size of the array
+size = int(input("Enter the size of the array: "))
+
+# Accept the elements of the array
+array = [int(input(f"Enter element {i}: ")) for i in range(size)]
+
+# Find the maximum number in the array
+max_num = max(array)
+
+# Print the maximum number
+print(f"The maximum number is {max_num}.")

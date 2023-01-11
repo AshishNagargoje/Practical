@@ -1,0 +1,24 @@
+Q)1
+
+def is_prime(num):
+    """
+    Function to check if a number is prime.
+    """
+    if num < 2:
+        return False
+    for i in range(2, int(num**(1/2)) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+counter = 0
+num = 1
+
+# Find and print the first 20 prime numbers
+while counter < 20:
+    if is_prime(num):
+        print(num, end=' ')
+        counter += 1
+    num += 1
+
+print()

@@ -1,0 +1,35 @@
+Q)1
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def __add__(self, other):
+        return Circle(self.radius + other.radius)
+    
+    def area(self):
+        return math.pi * self.radius ** 2
+
+# Test the Circle class
+circle1 = Circle(3)
+circle2 = Circle(4)
+circle3 = circle1 + circle2
+print(circle3.radius)  # Output: 7
+print(circle3.area())  # Output: 153.93804002589985
+
+
+
+Q)2
+
+# Accept input from the user
+raw_list = input("Enter a list of numbers: ")
+
+# Split the input string into a list of numbers
+numbers = [int(x) for x in raw_list.split()]
+
+# Create a new list with the duplicates removed
+unique_numbers = list(set(numbers))
+
+# Print the list of unique numbers
+print(unique_numbers)
